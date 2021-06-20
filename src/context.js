@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from "react";
 
-export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`;
+export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=c2575fea`;
 export const API_ENDPOINT_SINGLE = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY_2}`;
 
 const AppContext = React.createContext();
@@ -9,14 +9,14 @@ const AppProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [movies, setMovies] = useState([]);
-  const [query, setQuery] = useState('batman');
+  const [query, setQuery] = useState("batman");
   const fetchMovies = async (url) => {
     setIsLoading(true);
     try {
       const response = await fetch(url);
       const data = await response.json();
 
-      if (data.Response === 'True') {
+      if (data.Response === "True") {
         setMovies(data.Search);
         setIsError(false);
       } else {
