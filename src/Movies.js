@@ -12,7 +12,7 @@ const Movies = () => {
   }
 
   useEffect(()=>{
-    console.log("hii");
+    console.log("SOME MORE CHARNEhii");
   },[])
 
   return (
