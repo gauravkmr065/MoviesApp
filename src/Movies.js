@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useGlobalContext } from './context'
 import { Link } from 'react-router-dom'
 const url =
@@ -10,10 +10,6 @@ const Movies = () => {
   if (isLoading) {
     return <div className='loading'></div>
   }
-
-  useEffect(()=>{
-    console.log("hii");
-  },[])
 
   return (
     <section className='movies'>
